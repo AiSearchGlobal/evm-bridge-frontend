@@ -108,8 +108,8 @@
           </div>
 
           <div class="mt-2 text-center small text-white">
-            <span v-if="tokenName() != 'EOS'">
-              {{ $t('home.bridgeFee') }} {{ egressFeeInEOS() }} EOS
+            <span v-if="tokenName() != 'A'">
+              {{ $t('home.bridgeFee') }} {{ egressFeeInEOS() }} A
             </span>
             <br>
             {{ $t('home.transferTime', ['~5 s']) }}
@@ -271,18 +271,18 @@ export default {
       finished: false,
       transactionError: '',
       extraWarning: '',
-      tokenList: [{ name: 'EOS', addr: '', logo: 'images/eos.png', ingressFee: 0}],
+      tokenList: [{ name: 'A', addr: '', logo: 'images/a.png', ingressFee: 0}],
       selectedToken: 0,
       egressFee: '0',
       decimals: null,
       tokenListTestnet: [
-        { name: 'EOS', addr: '', logo: 'images/eos.png', ingressFee: 0},
+        { name: 'A', addr: '', logo: 'images/a.png', ingressFee: 0},
         { name: 'JUNGLE', addr: '0x4ea3b729669bF6C34F7B80E5D6c17DB71F89F21F', logo: 'images/jungle.png', erc20_contract: null, ingressFee: 0 },
       ],
       tokenListMainnet: [
         {
-          name: 'EOS', addr: '', logo: 'images/eos.png',
-          blockList: ['eosbndeposit', 'bybitdeposit', 'bitgeteosdep', 'kucoindoteos', 'binancecleos'],
+          name: 'A', addr: '', logo: 'images/a.png',
+          blockList: ['eosbndeposit', 'bybitdeposit', 'bitgeteosdep', 'kucoindoteos', 'binancecleos', 'coinbasebase'],
           warningList: ['huobideposit', 'okbtothemoon', 'gateiowallet', 'coinbasebase', 'krakenkraken'],
           ingressFee: 0
         },
@@ -477,7 +477,7 @@ export default {
 
       for (let index = 0; index < tokenList.length; index++) {
         let e = tokenList[index]
-        if (e.name === "EOS") {
+        if (e.name === "A") {
           const r = await this.rpc.fetch('/v1/chain/get_table_rows', { "table": "config", "scope": "eosio.evm", "code": "eosio.evm", "json": true })
           e.ingressFee = Number(r.rows[0].ingress_bridge_fee.split(' ')[0])
           e.enabled = true
@@ -605,7 +605,7 @@ export default {
       if (!address) {
         return
       }
-      if (this.tokenName() === 'EOS') {
+      if (this.tokenName() === 'A') {
         const bal = await fetchBalance({
           address,
           formatUnits: 'wei',
@@ -675,7 +675,7 @@ export default {
 
         await this.getPrice()
 
-        if (this.tokenName() === 'EOS') {
+        if (this.tokenName() === 'A') {
           tx = await sendTransaction({
             from: this.address,
             to: this.addressEvm,
