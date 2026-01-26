@@ -144,7 +144,7 @@ const selectLang = (val) => {
           <b-link href="https://t.me/eosevm">
             <fa icon="telegram" fab/>
           </b-link>
-          <b-link href="https://www.youtube.com/@EOSNetworkFoundation">
+          <b-link href="https://www.youtube.com/@FLONNetworkFoundation">
             <fa icon="youtube" fab/>
           </b-link>
         </b-col>
