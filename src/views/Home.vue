@@ -78,9 +78,9 @@
                   <div class="form-text font-monospace" v-if='extraWarning !== ""'>
                     <span style="color: red">{{ extraWarning }}</span>
                   </div>
-                  <div class="form-text font-monospace" v-if="addressEvm">
-                    <span v-if="addressEvm.message">{{ addressEvm.message }}</span>
-                    <span v-else>{{ addressEvm }}</span>
+                  <div class="form-text font-monospace" v-if="targetAddress">
+                    <span v-if="addressEvm && addressEvm.message">{{ addressEvm.message }}</span>
+                    <span v-else>{{ targetAddress }}</span>
                   </div>
                 </div>
                 <div>
@@ -538,11 +538,10 @@ export default {
 
     async getPrice() {
 
-      const feeData = await fetchFeeData({
-        formatUnits: 'wei',
-      })
-
-      this.gasPrice = new BN(feeData.formatted.gasPrice)
+      const feeData = await fetchFeeData()
+      if (feeData.gasPrice) {
+        this.gasPrice = new BN(feeData.gasPrice.toString())
+      }
 
     },
 
@@ -554,7 +553,7 @@ export default {
       if (!network || !network.chain) {
         return
       }
-      let targetChainid = (this.env === "TESTNET" ? 15557 : 17777);
+      let targetChainid = 7104;
       if (network.chain.id != targetChainid) {
         window.alert(this.$t('home.swtichNetPrompt'))
         switchNetwork({ chainId: targetChainid }).then((r) => {
@@ -605,25 +604,29 @@ export default {
       if (!address) {
         return
       }
-      if (this.tokenName() === 'A') {
-        const bal = await fetchBalance({
-          address,
-          formatUnits: 'wei',
-        })
-        this.decimals = 18
-        const wei = new BN(bal.formatted)
-        this.balance = Web3.utils.fromWei(wei, 'ether')
-      }
-      else {
-        if ((this.erc20_contract())) {
-          const wei = new BN((await this.erc20_contract().read.balanceOf([address])).toString())
-          this.decimals = await this.erc20_contract().read.decimals()
-          this.balance = this.displayValue(wei.toString(), this.decimals)
+      try {
+        if (this.tokenName() === 'A') {
+          const bal = await fetchBalance({ address })
+          this.decimals = 18
+          const wei = new BN(bal.value.toString())
+          this.balance = Web3.utils.fromWei(wei, 'ether')
         }
         else {
-          this.balance = null;
-          this.decimals = null;
+          if ((this.erc20_contract())) {
+            const wei = new BN((await this.erc20_contract().read.balanceOf([address])).toString())
+            const decimals = await this.erc20_contract().read.decimals()
+            this.decimals = Number(decimals)
+            this.balance = this.displayValue(wei.toString(), this.decimals)
+          }
+          else {
+            this.balance = null;
+            this.decimals = null;
+          }
         }
+      } catch (err) {
+        console.error('getBalance failed', err)
+        this.balance = null
+        this.decimals = null
       }
 
     },

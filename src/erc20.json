@@ -338,7 +338,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "linkedEOSAccountName",
+		"name": "linkedFLONAccountName",
 		"outputs": [
 			{
 				"internalType": "string",
@@ -351,7 +351,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "linkedEOSAddress",
+		"name": "linkedFLONAddress",
 		"outputs": [
 			{
 				"internalType": "address",

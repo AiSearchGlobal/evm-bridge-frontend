@@ -1,6 +1,6 @@
 # evm-bridge-frontend
 
-The frontend of the trustless bridge of the Vaulta EVM. 
+The frontend of the trustless bridge of the FLON EVM. 
 
 ## Project Setup
 

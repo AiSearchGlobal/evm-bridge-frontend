@@ -2,7 +2,7 @@
 import { provide, reactive, ref, inject, watch } from 'vue'
 import { RouterView } from 'vue-router'
 import { createWeb3Modal, defaultWagmiConfig, useWeb3Modal, useWeb3ModalEvents } from '@web3modal/wagmi/vue'
-import { eos, eosTestnet } from 'viem/chains'
+import { defineChain } from 'viem'
 
 
 
@@ -28,22 +28,36 @@ const selectLang = (val) => {
   const projectId = '12d2503c58f46ada41000bde1e0d0b7a'
 
   // 2. Create wagmiConfig
-  const chains = [env === 'MAINNET' ? eos : eosTestnet]
+  const rpcUrl = import.meta.env.VITE_MAINNET_RPC_URL || 'https://t-evm.fufi.dev'
+  const flonChain = defineChain({
+    id: 7104,
+    name: 'FLON EVM',
+    network: 'flon',
+    nativeCurrency: {
+      name: 'FLON',
+      symbol: 'FLON',
+      decimals: 18,
+    },
+    rpcUrls: {
+      default: { http: [rpcUrl] },
+      public: { http: [rpcUrl] },
+    },
+  })
+  const chains = [flonChain]
   const wagmiConfig = defaultWagmiConfig({ chains, projectId, appName: 'Web3Modal' ,
   metadata: {
-    name: 'Vaulta EVM',
-    description: 'Vaulta EVM',
+    name: 'FLON EVM',
+    description: 'FLON EVM',
     url: 'https://vaulta.com',
     icons: ['https://bridge.evm.eosnetwork.com/images/a.png']
   },
-  rpcUrl: env === 'MAINNET' ? 'https://api.evm.eosnetwork.com' : 'https://api.testnet.evm.eosnetwork.com',
+  rpcUrl,
 })
 
   // 3. Create modal
   createWeb3Modal({ wagmiConfig, projectId, chains ,
     chainImages: {
-    15557: '/images/a.png',
-    17777: '/images/a.png',
+    7104: '/images/a.png',
   },
   themeMode: 'light',
     themeVariables: {
