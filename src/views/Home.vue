@@ -271,17 +271,17 @@ export default {
       finished: false,
       transactionError: '',
       extraWarning: '',
-      tokenList: [{ name: 'FLON', addr: '', logo: 'images/a.png', ingressFee: 0}],
+      tokenList: [{ name: 'FLON', addr: '', logo: 'https://cdn.flon.network/explorer/images/flon.png', ingressFee: 0}],
       selectedToken: 0,
       egressFee: '0',
       decimals: null,
       tokenListTestnet: [
-        { name: 'FLON', addr: '', logo: 'images/a.png', ingressFee: 0},
+        { name: 'FLON', addr: '', logo: 'https://cdn.flon.network/explorer/images/flon.png', ingressFee: 0},
         { name: 'JUNGLE', addr: '0x4ea3b729669bF6C34F7B80E5D6c17DB71F89F21F', logo: 'images/jungle.png', erc20_contract: null, ingressFee: 0 },
       ],
       tokenListMainnet: [
         {
-          name: 'FLON', addr: '', logo: 'images/a.png',
+          name: 'FLON', addr: '', logo: 'https://cdn.flon.network/explorer/images/flon.png',
           blockList: ['eosbndeposit', 'bybitdeposit', 'bitgeteosdep', 'kucoindoteos', 'binancecleos', 'coinbasebase'],
           warningList: ['huobideposit', 'okbtothemoon', 'gateiowallet', 'coinbasebase', 'krakenkraken'],
           ingressFee: 0
