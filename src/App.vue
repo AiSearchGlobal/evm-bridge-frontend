@@ -10,8 +10,8 @@ const env = inject('env')
 const i18n = inject('i18n')
 
 const networks = {
-  "Testnet": 'https://bridge.testnet.evm.eosnetwork.com',
-  "Mainnet": 'https://bridge.evm.eosnetwork.com'
+  "Testnet": 'https://bridge.testnet.evm.flonnetwork.com',
+  "Mainnet": 'https://bridge.evm.flonnetwork.com'
 }
 const lang = ref(i18n.global.locale.value || 'en')
 const langs = {
@@ -121,12 +121,12 @@ const selectLang = (val) => {
             <div class="footer-info-header">{{$t('navbar.about')}}</div>
             <ul style="list-style: none; padding-left: 0;">
               <li>
-                <b-link href="https://docs.eosnetwork.com/docs/latest/eos-evm/">
+                <b-link href="https://docs.flonnetwork.com/docs/latest/eos-evm/">
                   {{$t('navbar.docs')}}
                 </b-link>
               </li>
               <li>
-                <b-link href="https://docs.eosnetwork.com/docs/latest/eos-evm/">
+                <b-link href="https://docs.flonnetwork.com/docs/latest/eos-evm/">
                   {{$t('navbar.faq')}}
                 </b-link>
               </li>

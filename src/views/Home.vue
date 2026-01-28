@@ -114,7 +114,7 @@
             <br>
             {{ $t('home.transferTime', ['~1s']) }}
             <br>
-            {{ $t('home.exchangeTime', ['~ 3 mins']) }}
+            {{ $t('home.exchangeTime', ['~10s']) }}
           </div>
 
           <div class="transaction-hash" v-if="transactionHash">
@@ -654,7 +654,7 @@ export default {
     },
 
     getEvmTxExplorerUrl(tx) {
-      let targetExplorerAddr = (this.env === "TESTNET" ? "https://explorer.testnet.evm.eosnetwork.com" : "https://explorer.evm.eosnetwork.com");
+      let targetExplorerAddr = (this.env === "TESTNET" ? "https://explorer.testnet.evm.flonnetwork.com" : "https://explorer.evm.flonnetwork.com");
       return targetExplorerAddr + '/tx/' + tx
     },
 
