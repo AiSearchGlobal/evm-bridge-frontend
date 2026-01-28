@@ -48,7 +48,7 @@ const messages = {
     'home.eos2evmDesc.p2': 'To transfer funds to the following FLON Contract Address, please fill in the Destination FLON EVM Address in the memo to complete the deposit to FLON EVM.',
     'home.eos2evmDesc.p3.testnet': 'Officially supported tokens include',
     'home.eos2evmDesc.p3.mainnet': 'Officially supported tokens include',
-    'home.eos2evmDesc.p4.testnet': 'A full list of tokens and their ingress fees can be accessed here: <a href="https://jungle4.eosq.eosnation.io/account/eosio.erc2o/tables?scope=eosio.erc2o&tableName=tokens" rel="nofollow">https://jungle4.eosq.eosnation.io</a>',
+    'home.eos2evmDesc.p4.testnet': 'A full list of tokens and their ingress fees can be accessed here: <a href="https://flonscan.io/account/eosio.erc2o/tables?scope=eosio.erc2o&tableName=tokens" rel="nofollow">https://flonscan.io</a>',
     'home.eos2evmDesc.p4.mainnet': 'A full list of tokens and their ingress fees can be accessed here: <a href="https://eos.eosq.eosnation.io/account/eosio.erc2o/tables?scope=eosio.erc2o&tableName=tokens" rel="nofollow">https://eos.eosq.eosnation.io</a>',
 
     'home.addressCheck.invalidAddress': 'Address includes an illegal character',
@@ -136,7 +136,7 @@ const messages = {
     'home.eos2evmDesc.p2': '다음 FLON 컨트랙트 주소로 자금을 이체하려면 메모에 목적지 FLON EVM 주소를 입력하여 FLON EVM에 입금을 완료하세요.',
     'home.eos2evmDesc.p3.testnet': '현재 공식적으로 지원되는 토큰은',
     'home.eos2evmDesc.p3.mainnet': '현재 공식적으로 지원되는 토큰은',
-    'home.eos2evmDesc.p4.testnet': '전체 토큰 목록 및 브릿징 수수료는 여기에서 확인하실 수 있습니다: <a href="https://jungle4.eosq.eosnation.io/account/eosio.erc2o/tables?scope=eosio.erc2o&tableName=tokens" rel="nofollow">https://jungle4.eosq.eosnation.io</a>',
+    'home.eos2evmDesc.p4.testnet': '전체 토큰 목록 및 브릿징 수수료는 여기에서 확인하실 수 있습니다: <a href="https://flonscan.io/account/eosio.erc2o/tables?scope=eosio.erc2o&tableName=tokens" rel="nofollow">https://flonscan.io</a>',
     'home.eos2evmDesc.p4.mainnet': '전체 토큰 목록 및 브릿징 수수료는 여기에서 확인하실 수 있습니다: <a href="https://eos.eosq.eosnation.io/account/eosio.erc2o/tables?scope=eosio.erc2o&tableName=tokens" rel="nofollow">https://eos.eosq.eosnation.io</a>',
 
 
@@ -225,7 +225,7 @@ const messages = {
     'home.eos2evmDesc.p2': '如需转账至以下 FLON 合约地址，请在 memo 中填写目标 FLON EVM 地址，以完成向 FLON EVM 的充值。',
     'home.eos2evmDesc.p3.testnet': '目前官方支持的代币包括',
     'home.eos2evmDesc.p3.mainnet': '目前官方支持的代币包括',
-    'home.eos2evmDesc.p4.testnet': '可在此处访问一系列代币及其跨链手续费: <a href="https://jungle4.eosq.eosnation.io/account/eosio.erc2o/tables?scope=eosio.erc2o&tableName=tokens" rel="nofollow">https://jungle4.eosq.eosnation.io</a>',
+    'home.eos2evmDesc.p4.testnet': '可在此处访问一系列代币及其跨链手续费: <a href="https://flonscan.io/account/eosio.erc2o/tables?scope=eosio.erc2o&tableName=tokens" rel="nofollow">https://flonscan.io</a>',
     'home.eos2evmDesc.p4.mainnet': '可在此处访问一系列代币及其跨链手续费: <a href="https://eos.eosq.eosnation.io/account/eosio.erc2o/tables?scope=eosio.erc2o&tableName=tokens" rel="nofollow">https://eos.eosq.eosnation.io</a>',
 
 

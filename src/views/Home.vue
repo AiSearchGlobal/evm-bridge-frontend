@@ -112,7 +112,7 @@
               {{ $t('home.bridgeFee') }} {{ egressFeeInEOS() }} FLON
             </span>
             <br>
-            {{ $t('home.transferTime', ['~5 s']) }}
+            {{ $t('home.transferTime', ['~1s']) }}
             <br>
             {{ $t('home.exchangeTime', ['~ 3 mins']) }}
           </div>
@@ -230,7 +230,7 @@
         </div>
 
         <div class="mt-2 text-center small text-white">
-          {{ $t('home.transferTime', ['~ 5 s']) }}
+          {{ $t('home.transferTime', ['~1s']) }}
         </div>
       </b-tab>
     </b-tabs>
@@ -277,7 +277,6 @@ export default {
       decimals: null,
       tokenListTestnet: [
         { name: 'FLON', addr: '', logo: 'https://cdn.flon.network/explorer/images/flon.png', ingressFee: 0},
-        { name: 'JUNGLE', addr: '0x4ea3b729669bF6C34F7B80E5D6c17DB71F89F21F', logo: 'images/jungle.png', erc20_contract: null, ingressFee: 0 },
       ],
       tokenListMainnet: [
         {
@@ -660,7 +659,7 @@ export default {
     },
 
     getEosTxExplorerUrl(tx) {
-      let targetExplorerAddr = (this.env === "TESTNET" ? "https://jungle4.eosq.eosnation.io" : "https://eos.eosq.eosnation.io");
+      let targetExplorerAddr = (this.env === "TESTNET" ? "https://flonscan.io" : "https://eos.eosq.eosnation.io");
       return targetExplorerAddr + '/tx/' + tx
     },
 
